@@ -6,4 +6,8 @@ print(data)
 print("max distance",max(data['distance']))
 average=round(sum(data['distance'])/len(data['distance']),3)
 print("average distance",average)
-print("avarage <",data[(data['distance']>average)])
+
+filtered_walk=data[data['distance']>average]
+print("avarage <",filtered_walk)
+filtered_walk.to_json('filtered_walk.json')
+
